@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <v-app>
+        <v-content>
+          <v-container>
+            <h4>
+              All currencies quoted against the {{base.base}} (base currency) as
+              at {{ base.date }}
+            </h4>
+            <br>
+            <template>
+              <v-simple-table fixed-header height="" dark>
+                <template v-slot:default>
+                  <thead>
+                    <tr>
+                      <th class="text-left, head">Currencies</th>
+                      <th class="text-left, data">Market Value</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="(value, key) in items">
+                      <td class="head" >{{ key }}</td  >
+                      <td class="data">{{ value }}</td>
+                    </tr>
+                  </tbody>
+                </template>
+              </v-simple-table>
+            </template>
+          </v-container>
+        </v-content>
+      </v-app>
+    </div>
+    <style>
+      .head{
+        padding-left: 150px !important;
+        font-size: 40px;
+    
+      }
+      th{
+        font-size: 25px !important;
+      }
+      td{
+        font-size: 20px !important;
+      }
+      .data{
+        padding-left: 700px !important;
+      }
+      h4{
+        font-size: 30px;
+        text-align: center;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
